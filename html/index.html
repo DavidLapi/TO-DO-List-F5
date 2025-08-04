@@ -1,12 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/styles.css">
-    <title>Lista de tareas</title>
-</head>
-<body>
-    
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../css/styles.css">
+        <title>Lista de tareas</title>
+    </head>
+    <body>
+        <header>
+            <h1>📋 Lista de tareas</h1>
+            <p>Organiza tu día y aumenta tu productividad</p>
+        </header>
+        <main>
+            <section>
+
+            
+            <form method="post" action="#">
+                <fieldset>
+                    <legend><label for="campo-tarea" id="campo-tarea-label">¿Qué tarea quieres añadir?</label></legend>
+                    <input type="text" name="campo-tarea" id="campo-tarea">
+                    
+                </fieldset>
+                <fieldset>
+                    <button type="submit">Agregar</button>
+                    <button type="reset">Vaciar</button>
+                </fieldset>
+            </form>
+            </section>
+            <section>
+            <h3>Lista de tareas</h3>
+            <div id="lista-tareas">
+                
+            </div>
+            </section>
+        </main>
+        <footer>
+            <p><span>0 tareas en total</span> | <span>0 tareas completadas</span> | <span>0 tareas pendientes</span></p>
+        </footer>
+        <script src="../js/script.js"></script>
+    </body>
 </html>
