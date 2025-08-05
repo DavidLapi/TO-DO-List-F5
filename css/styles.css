@@ -44,6 +44,7 @@ main {
 
 section {
     padding: 10px;
+    margin: 15px;
 }
 
 fieldset {
@@ -60,10 +61,12 @@ fieldset > legend {
 }
 
 fieldset > input[type="text"] {
-    width: 90%;
-    max-width: 700px;
+    width: 95%;
+    max-width: 900px;
     height: 25px;
     margin: auto;
+    font-size: medium;
+    border-radius: 10px;
 }
 
 button[type="submit"],
@@ -87,7 +90,7 @@ button[type="reset"]:hover {
     box-shadow: 0 5px 5px rgb(10, 251, 255), 0 0 20px #f76f00;
 }
 
-#lista-tareas {
+#todos-container {
     width: 100%;
     height: 300px;
     background-color: rgba(10, 190, 255, 1);
@@ -96,6 +99,24 @@ button[type="reset"]:hover {
     overflow-x: hidden;
     overflow-y: scroll;
     border: 1px solid;
+}
+
+#empty {
+    /*visibility: hidden;*/
+    background-color: rgba(0, 100, 255);
+    width: auto;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.empty-icon {
+    font-size: 50px;
+    margin: 25px;
 }
 
 /* FOOTER */

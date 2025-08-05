@@ -1,0 +1,10 @@
+{
+    "tasks": [
+        {
+            "id": 1,
+            "nombre": "Lavar la ropa",
+            "activo": true
+        }
+        
+    ]
+}

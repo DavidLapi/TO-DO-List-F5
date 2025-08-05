@@ -4,6 +4,8 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="../css/styles.css">
+        <!-- FontAwesome -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <title>Lista de tareas</title>
     </head>
     <body>
@@ -11,27 +13,30 @@
             <h1>📋 Lista de tareas</h1>
             <p>Organiza tu día y aumenta tu productividad</p>
         </header>
-        <main>
+        <main class="container">
             <section>
-
-            
-            <form method="post" action="#">
-                <fieldset>
-                    <legend><label for="campo-tarea" id="campo-tarea-label">¿Qué tarea quieres añadir?</label></legend>
-                    <input type="text" name="campo-tarea" id="campo-tarea">
-                    
-                </fieldset>
-                <fieldset>
-                    <button type="submit">Agregar</button>
-                    <button type="reset">Vaciar</button>
-                </fieldset>
-            </form>
+                <form class="input-area" id="input-area">
+                    <fieldset>
+                        <legend><label for="input-tarea" id="input-tarea-label">¿Qué tarea quieres añadir?</label></legend>
+                        <input type="text" name="input-tarea" id="input-tarea" placeholder="Introduce una tarea nueva">
+                    </fieldset>
+                    <fieldset>
+                        <button type="submit" id="agregar-tarea-btn"><i class="fa-solid fa-plus"></i>: Agregar</button>
+                        <button type="reset" id="reset-task-btn"><i class="fa-solid fa-minus"></i>: Vaciar</button>
+                    </fieldset>
+                </form>
             </section>
             <section>
-            <h3>Lista de tareas</h3>
-            <div id="lista-tareas">
-                
-            </div>
+                <h3>Lista de tareas</h3>
+                <div class="todos-container" id="todos-container">
+                    <ul id="lista-tarea"></ul>
+                    <!-- Estado vacío cuando no hay tareas -->
+                    <div class="empty" id="empty">
+                        <div class="empty-icon">📝</div>
+                        <h3>¡No hay tareas aún!</h3>
+                        <p>Añade tu primera tarea para empezar a organizarte</p>
+                    </div>
+                </div>
             </section>
         </main>
         <footer>
