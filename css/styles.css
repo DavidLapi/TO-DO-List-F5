@@ -62,9 +62,9 @@ fieldset > legend {
 
 fieldset > input[type="text"] {
     width: 95%;
-    max-width: 900px;
     height: 25px;
     margin: auto;
+    padding: 1rem;
     font-size: medium;
     border-radius: 10px;
 }
@@ -90,19 +90,20 @@ button[type="reset"]:hover {
     box-shadow: 0 5px 5px rgb(10, 251, 255), 0 0 20px #f76f00;
 }
 
-#todos-container {
+.todos-container {
     width: 100%;
     height: 300px;
-    background-color: rgba(10, 190, 255, 1);
+    background-color: rgb(10, 251, 255);
     margin: 1.5em 0;
     line-height: 1em;
     overflow-x: hidden;
     overflow-y: scroll;
-    border: 1px solid;
+    border: 3px solid;
+    border-radius: 20px 0 0 20px;
 }
 
-#empty {
-    /*visibility: hidden;*/
+/* Contenido vacío de tareas*/
+.empty {
     background-color: rgba(0, 100, 255);
     width: auto;
     height: 100%;
@@ -118,6 +119,95 @@ button[type="reset"]:hover {
     font-size: 50px;
     margin: 25px;
 }
+
+/* Lista de tareas */
+.lista-tarea {
+    width: 100%;
+}
+
+.lista-tarea li {
+    margin: 10px 5px;
+    padding: 8px 10px;
+    background-color: rgba(10, 100, 255, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 30px;
+    font-size: 1rem;
+    color: rgb(0, 0, 10);
+    transition: box-shadow 0.2s ease;
+}
+
+.lista-tarea li:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 1);
+}
+
+/* Checkbox */
+.lista-tarea li .checkbox {
+    min-width: 30px;
+    height: 30px;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    background: transparent;
+    border-radius: 50%;
+    appearance: none;
+    cursor: pointer;
+    transition: all 0.2 ease;
+}
+
+.lista-tarea li .checkbox:checked {
+    background: rgb(10, 100, 255);
+    transform: scale(1.1);
+}
+
+.lista-tarea li .checkbox:checked::before {
+    content: '\2713';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.lista-tarea li span {
+    flex: 1;
+    margin-left: 10px;
+    word-wrap: break-word;
+}
+
+/* Botones de editar y eliminar */
+.tareas-btns {
+    display: flex;
+    gap: 10px;
+    margin-right: auto;
+}
+
+.tareas-btns button {
+    background-color: rgba(10, 100, 255, 0.3);
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    color: rgb(255, 220, 200);
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tareas-btns button:hover {
+    transform: scale(1.2);
+}
+
+.tareas-btns .btn-delete {
+    background-color: rgb(255, 25, 0);
+}
+
+.tareas-btns .btn-edit {
+    background-color: rgb(255, 127, 0);
+}
+
 
 /* FOOTER */
 
