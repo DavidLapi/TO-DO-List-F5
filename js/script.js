@@ -6,14 +6,13 @@ document.addEventListener("DOMContentLoaded", () => {
     const agregarTareaBtn = document.getElementById("agregar-tarea-btn");
     const listaTarea = document.getElementById("lista-tarea");
     const vacioTareas = document.querySelector(".empty");
-    const todosContainer = document.getElementById("todos-container");
     
     const totalTareas = document.querySelector(".total-tareas");
     const completaTareas = document.querySelector(".completa-tareas");
     const pendienteTareas = document.querySelector(".pendiente-tareas");
 
-    let numTotal = 0;
-    let numcompleta = 0;
+    let numTotal = 0; 
+    let numCompleta = 0;
     let numPendiente = 0; 
 
     //Funcion para ocultar el contenido "no hay tareas aún"
@@ -27,9 +26,25 @@ document.addEventListener("DOMContentLoaded", () => {
 
     }
 
-    function agregar(event, completed = false) {
+    //Función para guardar tareas en localStorage
+    function guardarTareaEnLocalStorage() {
+        const tareas = Array.from(listaTarea.querySelectorAll("li")).map(li => ({
+            text: li.querySelector('span').textContent,
+            completed: li.querySelector(".checkbox").checked
+        }));
+        localStorage.setItem("tasks", JSON.stringify(tareas));
+    };
+
+    //Función para cargar tareas en localStorage
+    function cargarTareaEnLocalStorage() {
+        const tareasGuardadas = JSON.parse(localStorage.getItem("tasks")) || [];
+        tareasGuardadas.forEach(({text, completed}) => agregar(text, completed));
+        ocultarVacioTareas();
+    }
+
+    function agregar(text, completed = false) {
         event.preventDefault();
-        const inputText = inputTarea.value.trim();
+        const inputText = text || inputTarea.value.trim();
         if (!inputText) {
             return;
         }
@@ -54,8 +69,6 @@ document.addEventListener("DOMContentLoaded", () => {
             btnEdit.style.opacity = "0.5";
             btnEdit.style.pointerEvents = "none";
 
-            numcompleta++;
-            completaTareas.textContent = numcompleta;
         }
 
         checkbox.addEventListener("change", () => {
@@ -64,6 +77,16 @@ document.addEventListener("DOMContentLoaded", () => {
             btnEdit.disabled = isChecked;
             btnEdit.style.opacity = isChecked ? "0.5" : "1";
             btnEdit.style.pointerEvents = isChecked ? "none" : "auto";
+
+            if(isChecked) {
+                numCompleta++;
+                completaTareas.textContent = numCompleta;
+            } else {
+                numCompleta--;
+                completaTareas.textContent = numCompleta;
+            }
+
+            guardarTareaEnLocalStorage();
         });
 
         btnDelete.addEventListener("click", () => {
@@ -74,6 +97,12 @@ document.addEventListener("DOMContentLoaded", () => {
             numPendiente--;
             totalTareas.textContent = numTotal;
             pendienteTareas.textContent = numPendiente;
+            if (checkbox.checked) {
+                numCompleta--;
+                completaTareas.textContent = numCompleta;
+            }
+
+            guardarTareaEnLocalStorage();
         });
 
         btnEdit.addEventListener("click", () => {
@@ -86,26 +115,32 @@ document.addEventListener("DOMContentLoaded", () => {
                 numPendiente--;
                 totalTareas.textContent = numTotal;
                 pendienteTareas.textContent = numPendiente;
+
+                guardarTareaEnLocalStorage();
             }
-        })
+        });
 
         listaTarea.appendChild(li);
-        inputTarea.textContent = " ";
-        inputText.textContent = " ";
+        inputTarea.value = "";
         ocultarVacioTareas();
 
         numTotal++;
         numPendiente++;
         totalTareas.textContent = numTotal;
         pendienteTareas.textContent = numPendiente;
+        //Guardar en localStorage al agregar tarea
+        guardarTareaEnLocalStorage();
 
     }
 
-    agregarTareaBtn.addEventListener("click", agregar);
+    agregarTareaBtn.addEventListener("click",  () => agregar());
     inputTarea.addEventListener("keypress", (e) => {
-        if(e.key === "Enter") {
-            agregar(e);
+        if(e.key === 'Enter') {
+            e.preventDefault(); 
+            agregar();
         }
     });
+
+    cargarTareaEnLocalStorage();
 
 });

@@ -139,7 +139,7 @@ button[type="reset"]:hover {
 }
 
 .lista-tarea li:hover {
-    box-shadow: 0 0 10px rgba(0, 0, 0, 1);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 1);
 }
 
 /* Checkbox */
@@ -172,6 +172,12 @@ button[type="reset"]:hover {
     flex: 1;
     margin-left: 10px;
     word-wrap: break-word;
+}
+
+.lista-tarea li.completed span {
+    text-decoration: 2px line-through rgb(0, 0, 50);
+    color: rgb(0, 0, 50);
+    font-weight: bold;
 }
 
 /* Botones de editar y eliminar */
@@ -221,4 +227,20 @@ footer {
 
 footer > p {
     text-align: center;
+}
+
+/* Diseño responsive con Media Queries */
+@media (max-width: 600px) {
+    .container {
+        margin: 0 20px;
+        padding: 0 10px;
+    }
+
+    .input-tarea {
+        font-size: 1rem;
+    }
+
+    .lista-tarea li {
+        font-size: 1rem;
+    }
 }

@@ -8,17 +8,17 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <title>Lista de tareas</title>
     </head>
-    <body>
+    <body class="container">
         <header>
             <h1>📋 Lista de tareas</h1>
             <p>Organiza tu día y aumenta tu productividad</p>
         </header>
-        <main class="container">
+        <main>
             <section>
                 <form class="input-area" id="input-area">
                     <fieldset>
                         <legend><label for="input-tarea" id="input-tarea-label">¿Qué tarea quieres añadir?</label></legend>
-                        <input type="text" name="input-tarea" id="input-tarea" placeholder="Introduce una tarea nueva">
+                        <input type="text" name="input-tarea" class="input-tarea" id="input-tarea" placeholder="Introduce una tarea nueva">
                     </fieldset>
                     <fieldset>
                         <button type="submit" id="agregar-tarea-btn"><i class="fa-solid fa-plus"></i>: Agregar</button>
