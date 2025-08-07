@@ -41,3 +41,20 @@
 
 <h3>Página TO-Do-List sin tareas</h3>
 
+![Wireframe sin tareas](img/Wireframe1.png)
+
+<h3>Página To-Do-List con tareas</h3>
+
+![Wireframe con tareas](img/Wireframe2.png)
+
+<hr>
+<h2>Diagrama de flujo</h2>
+
+<p>En este diagrama se mostrará la historia del usuario en diferentes etapas:</p>
+
+![Diagrama de flujo](img/Diagrama-flujo.png)
+
+<hr>
+
+<h2>Data flow</h2>
+
