@@ -1,40 +1,34 @@
 {
   "tareas": [
     {
-      "id": 1,
+      "id": "1",
       "title": "Aprender JavaScript",
       "completed": true,
       "createdAt": "2025-08-04T10:00:00.000Z"
     },
     {
-      "id": 3,
+      "id": "3",
       "title": "Implementar localStorage",
       "completed": false,
       "createdAt": "2025-08-04T08:00:00.000Z"
-    },
-    {
-      "title": "comida rapida",
-      "completed": false,
-      "updateAt": "2025-08-07T22:11:29.563Z",
-      "id": "5289"
-    },
-    {
-      "title": "comida",
-      "completed": false,
-      "updateAt": "2025-08-07T21:54:39.650Z",
-      "id": "6882"
-    },
-    {
-      "id": "395a",
-      "title": "cachopo",
-      "completed": false,
-      "createAt": "2025-08-07T17:56:46.900Z"
     },
     {
       "id": "fbde",
       "title": "Escribir libros",
       "completed": false,
       "createAt": "2025-08-07T21:54:56.048Z"
+    },
+    {
+      "title": "Tender la ropa",
+      "completed": false,
+      "updateAt": "2025-08-07T23:39:03.940Z",
+      "id": "55fa"
+    },
+    {
+      "title": "merendar",
+      "completed": false,
+      "updateAt": "2025-08-07T23:42:37.655Z",
+      "id": "3d1f"
     }
   ]
 }

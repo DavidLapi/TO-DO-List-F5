@@ -51,10 +51,25 @@ async function createTarea(data) {
             })
         });
         if(!response.ok) throw new Error("Error al crear la tarea");
-        return await response.json();
+        const todo = await response.json();
+        isOnline = true;
+        // Actualizar localStorage también
+        const todos = getTodosFromLocalStorage();
+        todos.push(todo);
+        saveTodosToLocalStorage(todos);
+        
+        return todo;
 
     } catch(error) {
         console.error("Error: ", error);
+        console.log("Guardando en localStorage...");
+        isOnline = false;
+        
+        // Fallback a localStorage
+        const todos = getTodosFromLocalStorage();
+        todos.push(newTodo);
+        saveTodosToLocalStorage(todos);
+        return newTodo;
     }
 
 }
@@ -69,6 +84,9 @@ async function getTareas() {
         return result;
     } catch(error) {
         console.error("Error: ", error);
+        console.log("Cargando desde localStorage...");
+        isOnline = false;
+        return getTodosFromLocalStorage();
     }
 }
 
@@ -84,10 +102,33 @@ async function updateTarea(id, data) {
             })
         });
         if(!response.ok) throw new Error("Error al actualizar la tarea");
-        return await response.json();
+        const updatedTodo = await response.json();
+        isOnline = true;
+
+        // Actualizar localStorage también
+        const todos = getTodosFromLocalStorage();
+        const index = todos.findIndex(t => t.id == id);
+        if (index !== -1) {
+            todos[index] = updatedTodo;
+            saveTodosToLocalStorage(todos);
+        }
+        
+        return updatedTodo;
         
     } catch(error) {
         console.error("Error: ",error);
+        console.log("Actualizando en localStorage...");
+        isOnline = false;
+        
+        // Fallback a localStorage
+        const todos = getTodosFromLocalStorage();
+        const index = todos.findIndex(t => t.id == id);
+        if (index !== -1) {
+            todos[index] = { ...todos[index], ...data, updatedAt: new Date().toISOString() };
+            saveTodosToLocalStorage(todos);
+            return todos[index];
+        }
+        return null;
     }
 }
 
@@ -98,10 +139,25 @@ async function deleteTarea(id) {
             method: "DELETE"
         });
         if(!response.ok) throw new Error("Error al eliminar la tarea");
+        isOnline = true;
+        
+        // Eliminar de localStorage también
+        const todos = getTodosFromLocalStorage();
+        const filteredTodos = todos.filter(t => t.id != id);
+        saveTodosToLocalStorage(filteredTodos);
+
         return true;
 
     } catch(error) {
         console.error("Error: ",error);
+        console.log("Eliminando de localStorage...");
+        isOnline = false;
+        
+        // Fallback a localStorage
+        const todos = getTodosFromLocalStorage();
+        const filteredTodos = todos.filter(t => t.id != id);
+        saveTodosToLocalStorage(filteredTodos);
+        return true;
     }
 }
 
