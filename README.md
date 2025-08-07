@@ -58,3 +58,4 @@
 
 <h2>Data flow</h2>
 
+![Diagrama de flujo](img/Data-flow.png)
