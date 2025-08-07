@@ -33,4 +33,11 @@
 
 👉 <a href="https://trello.com/b/RCTSzACm">Tablero de Trello</a> 👈 
 
+<hr>
+
+<h2>🎞️ Wireframe</h2>
+
+<p>Antes de empezar a maquetar, se realizó un wireframe mínimo para planificar la estructura visual de la app.</p>
+
+<h3>Página TO-Do-List sin tareas</h3>
 
