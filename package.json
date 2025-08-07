@@ -1,5 +1,122 @@
 {
+  
   "devDependencies": {
-    "json-server": "^1.0.0-beta.3"
-  }
+  
+    
+  "json-server": "^1.0.0-beta.3"
+  
+  },
+  
+  "name": "to-do-list-f5",
+  
+  "version": "1.0.0",
+  
+  "description": "Es una aplicacion que permite añadir, ver, editar y eliminar una o más tareas.",
+  
+  "main": "index.js",
+  
+  "dependencies": {
+  
+    
+  "chalk": "^5.5.0",
+  
+    
+  "chokidar": "^4.0.3",
+  
+    
+  "colorette": "^2.0.20",
+  
+    
+  "dayjs": "^1.11.13",
+  
+    
+  "dot-prop": "^9.0.0",
+  
+    
+  "es-escape-html": "^0.1.1",
+  
+    
+  "eta": "^3.5.0",
+  
+    
+  "header-range-parser": "^1.1.3",
+  
+    
+  "http-status-emojis": "^2.2.0",
+  
+    
+  "inflection": "^3.0.2",
+  
+    
+  "ipaddr.js": "^2.2.0",
+  
+    
+  "json5": "^2.2.3",
+  
+    
+  "lowdb": "^7.0.1",
+  
+    
+  "milliparsec": "^4.0.0",
+  
+    
+  "mime": "^4.0.4",
+  
+    
+  "mrmime": "^2.0.1",
+  
+    
+  "negotiator": "^0.6.4",
+  
+    
+  "readdirp": "^4.1.2",
+  
+    
+  "regexparam": "^2.0.2",
+  
+    
+  "sirv": "^2.0.4",
+  
+    
+  "sort-on": "^6.1.0",
+  
+    
+  "steno": "^4.0.2",
+  
+    
+  "totalist": "^3.0.1",
+  
+    
+  "type-fest": "^4.41.0"
+  
+  },
+  
+  "scripts": {
+    "server": "json-server --watch ./json/db.json --port 3000",
+    "start": "npm run server",
+    "dev": "json-server --watch ./json/db.json --port 3000 --delay 500"
+  },
+  
+  "repository": {
+  
+    
+  "type": "git",
+  
+    
+  "url": "git+https://github.com/DavidLapi/TO-DO-List-F5.git"
+  
+  },
+  
+  "author": "",
+  
+  "license": "ISC",
+  
+  "bugs": {
+  
+    
+  "url": "https://github.com/DavidLapi/TO-DO-List-F5/issues"
+  
+  },
+  
+  "homepage": "https://github.com/DavidLapi/TO-DO-List-F5#readme"
 }

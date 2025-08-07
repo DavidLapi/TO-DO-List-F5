@@ -1,19 +1,58 @@
-
+//Comrpobamos que se conecta el script
 console.log("Este script está conectado.");
 
-document.addEventListener("DOMContentLoaded", () => {
-    const inputTarea = document.getElementById("input-tarea");
-    const agregarTareaBtn = document.getElementById("agregar-tarea-btn");
-    const listaTarea = document.getElementById("lista-tarea");
-    const vacioTareas = document.querySelector(".empty");
-    
-    const totalTareas = document.querySelector(".total-tareas");
-    const completaTareas = document.querySelector(".completa-tareas");
-    const pendienteTareas = document.querySelector(".pendiente-tareas");
+//variables para conectar la API con json-server
+const API_URL = "http://localhost:3000/tareas";
+const storageKey = "tasks";
+//variables de html 
+const inputTarea = document.getElementById("input-tarea"); //input texto
+const agregarTareaBtn = document.getElementById("agregar-tarea-btn"); //boton submit
+const listaTarea = document.getElementById("lista-tarea");
+const vacioTareas = document.querySelector(".empty"); 
 
-    let numTotal = 0; 
-    let numCompleta = 0;
-    let numPendiente = 0; 
+//Contador
+const totalTareas = document.querySelector(".total-tareas");
+const completaTareas = document.querySelector(".completa-tareas");
+const pendienteTareas = document.querySelector(".pendiente-tareas");
+
+let numTotal = 0; 
+let numCompleta = 0;
+let numPendiente = 0; 
+
+//Funciones localStorage
+//Función para guardar tareas en localStorage
+function guardarTareaEnLocalStorage() {
+    const tareas = Array.from(listaTarea.querySelectorAll("li")).map(li => ({
+        text: li.querySelector('span').textContent,
+        completed: li.querySelector(".checkbox").checked
+    }));
+    localStorage.setItem(storageKey, JSON.stringify(tareas));
+};
+
+//Función para cargar tareas en localStorage
+function cargarTareaEnLocalStorage() {
+    const tareasGuardadas = JSON.parse(localStorage.getItem(storageKey)) || [];
+    tareasGuardadas.forEach(({text, completed}) => agregar(text, completed));
+    ocultarVacioTareas();
+};
+
+//Operaciones CRUD
+async function getTareas() {
+    try {
+
+    } catch(error) {
+        console.error("Error:", error);
+        console.log("Cargando desde localStorage...");
+        isOnline = false;
+        return getTodosFromLocalStorage();
+    }
+}
+
+async function crearTarea(data) {
+    
+}
+
+document.addEventListener("DOMContentLoaded", () => {
 
     //Funcion para ocultar el contenido "no hay tareas aún"
     function ocultarVacioTareas() {
@@ -26,21 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     }
 
-    //Función para guardar tareas en localStorage
-    function guardarTareaEnLocalStorage() {
-        const tareas = Array.from(listaTarea.querySelectorAll("li")).map(li => ({
-            text: li.querySelector('span').textContent,
-            completed: li.querySelector(".checkbox").checked
-        }));
-        localStorage.setItem("tasks", JSON.stringify(tareas));
-    };
-
-    //Función para cargar tareas en localStorage
-    function cargarTareaEnLocalStorage() {
-        const tareasGuardadas = JSON.parse(localStorage.getItem("tasks")) || [];
-        tareasGuardadas.forEach(({text, completed}) => agregar(text, completed));
-        ocultarVacioTareas();
-    }
+    
 
     function agregar(text, completed = false) {
         event.preventDefault();
@@ -50,7 +75,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         const li = document.createElement("li");
-        li.innerHTML = `
+        li.innerHTML = ` 
             <input type="checkbox" class="checkbox" ${completed ? "checked" : ""}>
             <span>${inputText}</span> 
             <div class="tareas-btns">
