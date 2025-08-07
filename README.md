@@ -1,9 +1,9 @@
-# TO-DO-List-F5
+# 📋 TO-DO-List-F5
 <p>Esta aplicación tipo to-do list permite gestionar de forma sencilla las tareas: añadir, ver, modificar y eliminar.</p>
 
 <hr>
 
-<h2>Tecnologías usadas:</h2>
+<h2>💻 Tecnologías usadas:</h2>
 
 <ul>
   <li>HTML</li>
@@ -16,7 +16,7 @@
 
 <hr>
 
-<h2>Herramientas</h2>
+<h2>🛠️ Herramientas</h2>
 
 <ul>
   <li>Visual Studio Code</li>
@@ -24,3 +24,11 @@
   <li>Trello (Planificación de tareas)</li>
   <li>Figma (wireframe y prototipo visual)</li>
 </ul>
+
+<hr>
+
+<h2>📍 Planificación en Trello</h2>
+
+<p>Puedes ver la planificación entera del proyecto en este tablero:</p>
+
+
