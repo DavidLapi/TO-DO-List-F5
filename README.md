@@ -31,4 +31,6 @@
 
 <p>Puedes ver la planificación entera del proyecto en este tablero:</p>
 
+👉 <a href="https://trello.com/b/RCTSzACm">Tablero de Trello</a> 👈 
+
 
