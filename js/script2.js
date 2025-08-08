@@ -12,7 +12,7 @@ const totalTareas = document.querySelector(".total-tareas");
 const completaTareas = document.querySelector(".completa-tareas");
 const pendienteTareas = document.querySelector(".pendiente-tareas");
 //Números de tareas
-let numTotal = 0; 
+ 
 let numCompleta = 0;
 let numPendiente = 0;
 
@@ -201,9 +201,6 @@ async function displayTareas() {
     listaTarea.innerHTML = "";
     console.log(todos);
 
-    numTotal = todos.length; 
-    totalTareas.textContent = numTotal;
-
     todos.forEach(todo => {
         console.log(todo);
         listaTarea.innerHTML += `
@@ -221,6 +218,10 @@ async function displayTareas() {
                 </div>
             </li>
         `
+        
+        let numTotal = 0;
+        numTotal = todos.length;
+        totalTareas.textContent = numTotal;
 
     });
 

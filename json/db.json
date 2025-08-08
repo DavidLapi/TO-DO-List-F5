@@ -2,33 +2,33 @@
   "tareas": [
     {
       "id": "1",
-      "title": "Aprender JavaScript",
+      "title": "Hacer la comida",
       "completed": true,
-      "createdAt": "2025-08-04T10:00:00.000Z"
+      "createAt": "2025-08-07T23:54:41.327Z"
     },
     {
-      "id": "3",
-      "title": "Implementar localStorage",
+      "id": "74b6",
+      "title": "tender la ropa",
       "completed": false,
-      "createdAt": "2025-08-04T08:00:00.000Z"
+      "createAt": "2025-08-07T23:55:10.518Z"
     },
     {
-      "id": "fbde",
-      "title": "Escribir libros",
+      "id": "fe9f",
+      "title": "cocinar cachopo",
       "completed": false,
-      "createAt": "2025-08-07T21:54:56.048Z"
+      "createAt": "2025-08-07T23:55:28.072Z"
     },
     {
-      "title": "Tender la ropa",
+      "id": "95f9",
+      "title": "lavar ropa",
       "completed": false,
-      "updateAt": "2025-08-07T23:39:03.940Z",
-      "id": "55fa"
+      "createAt": "2025-08-07T23:55:39.795Z"
     },
     {
-      "title": "merendar",
+      "id": "9a96",
+      "title": "barrer casa",
       "completed": false,
-      "updateAt": "2025-08-07T23:42:37.655Z",
-      "id": "3d1f"
+      "createAt": "2025-08-07T23:55:45.591Z"
     }
   ]
 }
