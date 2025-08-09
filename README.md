@@ -9,6 +9,7 @@
   <li>HTML</li>
   <li>CSS</li>
   <li>JavaScript (Vanilla)</li>
+  <li>Node JS</li>
   <li>Fetch API</li>
   <li>Json-server (fake API)</li>
   <li>localStorage (como respaldo de los datos)</li>
@@ -56,3 +57,21 @@
 
 <hr>
 
+<h2>Clonar repositorio</h2>
+
+<ol>
+  <li>Abrir símbolo de consola y redirigirte a la ruta de proyectos (P.E.: C://Documentos/Proyectos)</li>
+  <li>Ejecutar el siguiente comando: <strong>git clone </strong></li>
+  <li>¡Listo! Tienes clonado tu repositorio.</li>
+</ol>
+
+<h2>Instalación de Json-server</h2>
+
+<ol>
+  <li>Abrir símbolo de consola y redirigirte a la ruta del proyecto (P.E.: C://Documentos/Proyectos/TO-DO-List-F5)</li>
+  <li>Comprobar si tenemos instalado Node.js (Ejecutar comando: <strong>node -v</strong>)</li>
+  <li>Instalar json-server con este comando: <strong>npm install --save-dev json-server</strong></li>
+  <li>Crear archivo db.json</li>
+  <li>Ejecutar el siguiente comando: <strong>json-server --watch db.json</strong> (opcional: <strong>npx json-server --watch db.json</strong> por si no se ha instalado correctamente el paquete)</li>
+  <li>¡Listo! API creada --> <strong>http://localhost:3000</strong></li>
+</ol>
