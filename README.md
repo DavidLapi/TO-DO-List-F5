@@ -61,7 +61,7 @@
 
 <ol>
   <li>Abrir símbolo de consola y redirigirte a la ruta de proyectos (P.E.: C://Documentos/Proyectos)</li>
-  <li>Ejecutar el siguiente comando: <strong>git clone </strong></li>
+  <li>Ejecutar el siguiente comando: <strong>git clone https://github.com/DavidLapi/TO-DO-List-F5.git</strong></li>
   <li>¡Listo! Tienes clonado tu repositorio.</li>
 </ol>
 
