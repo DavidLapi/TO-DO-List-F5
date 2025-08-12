@@ -11,10 +11,10 @@ const resetButton = document.getElementById("reset-task-btn");
 const totalTareas = document.querySelector(".total-tareas");
 const completaTareas = document.querySelector(".completa-tareas");
 const pendienteTareas = document.querySelector(".pendiente-tareas");
+
 //Números de tareas
- 
-let numCompleta = 0;
-let numPendiente = 0;
+// let numCompleta = 0;
+// let numPendiente = 0;
 
 //Grupo de botones de todo-list
 const btnDelete = document.querySelector(".btn-delete");
@@ -78,6 +78,23 @@ async function getTareas() {
     try {
         const response = await fetch(API_URL);
         if(!response.ok) throw new Error("Error en la lectura de las tareas");
+        const result = await response.json();
+        // Sincronizar con localStorage
+        saveTodosToLocalStorage(result);
+        return result;
+    } catch(error) {
+        console.error("Error: ", error);
+        console.log("Cargando desde localStorage...");
+        isOnline = false;
+        return getTodosFromLocalStorage();
+    }
+}
+
+// Read --> GET-ID
+async function getTareasById(id) {
+    try {
+        const response = await fetch(`${API_URL}/${id}`);
+        if(!response.ok) throw new Error("Error en la lectura de la tarea.");
         const result = await response.json();
         // Sincronizar con localStorage
         saveTodosToLocalStorage(result);
@@ -218,7 +235,7 @@ async function displayTareas() {
                 </div>
             </li>
         `
-        
+
         let numTotal = 0;
         numTotal = todos.length;
         totalTareas.textContent = numTotal;

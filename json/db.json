@@ -7,12 +7,6 @@
       "createAt": "2025-08-07T23:54:41.327Z"
     },
     {
-      "id": "74b6",
-      "title": "tender la ropa",
-      "completed": false,
-      "createAt": "2025-08-07T23:55:10.518Z"
-    },
-    {
       "id": "fe9f",
       "title": "cocinar cachopo",
       "completed": false,
@@ -25,10 +19,10 @@
       "createAt": "2025-08-07T23:55:39.795Z"
     },
     {
-      "id": "9a96",
-      "title": "barrer casa",
+      "id": "338a",
+      "title": "Cocinar sapguetis",
       "completed": false,
-      "createAt": "2025-08-07T23:55:45.591Z"
+      "createAt": "2025-08-08T09:35:26.609Z"
     }
   ]
 }
