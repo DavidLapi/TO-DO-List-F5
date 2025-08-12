@@ -57,6 +57,12 @@
 
 <hr>
 
+<h2>Vista previa:</h2>
+
+![Vista Previa](img/vista-previa.png)
+
+<hr>
+
 <h2>Clonar repositorio</h2>
 
 <ol>
